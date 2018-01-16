@@ -355,6 +355,43 @@ location / {
 }
 ```
 
+**延伸3：实现一个 JSONP 跨域**
+```javascript
+jsonp({
+  url: 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+  type: 'get',
+  data:{
+    wd: 'jsonp'
+  },
+  callback: 'cb',
+  success: function (data) { console.log(data) }
+});
+
+function jsonp (options) {
+  let url = options.url
+  let data = options.data
+  
+  let oBody = document.getElementsByTagName('body')[0]
+  let oScript = document.createElement('script')
+  
+  let callbackName = 'cb' + (~~(Math.random()*0xffffff)).toString(16)
+  window[callbackName] = function (result) {
+    options.success(result)        
+  }
+  data[options.callback] = callbackName
+  
+  oScript.setAttribute('src', url + '?' + format(data))
+  oBody.append(oScript)
+}
+function format(data) {
+  let str = ''
+  for (var p in data) {
+    str += encodeURIComponent(p) + '=' + encodeURIComponent(data[p]) + '&'
+  }
+  return str
+}
+```
+
 2. http 无状态无连接
 
 - http 协议对于事务处理没有记忆能力
