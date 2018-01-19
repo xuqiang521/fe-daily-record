@@ -15,6 +15,8 @@ setTimeout(function() {
 7. 事件循环的顺序，决定了 JavaScript 代码的执行顺序。它从 script (整体代码)开始第一次循环。之后全局上下文进入函数调用栈。直到调用栈清空(只剩全局)，然后执行所有的 micro-task 。当所有可执行的 micro-task 执行完毕之后。循环再次从 macro-task 开始，找到其中一个任务队列执行完毕，然后再执行所有的 micro-task，这样一直循环下去。
 8. 其中每一个任务的执行，无论是 macro-task 还是 micro-task，都是借助函数调用栈来完成。
 
+> ![](https://raw.githubusercontent.com/xuqiang521/fe-daily-record/master/javascript/event-loop/EventLoop.jpg)
+
 ## macrotask 与 microtask 类别具体分类
 
 ```js
@@ -70,6 +72,10 @@ console.log(8);
 ## 参考
 
 [Event loops](https://html.spec.whatwg.org/multipage/webappapis.html#event-loops)
+
+**队列执行顺序**
+
+> ![](https://raw.githubusercontent.com/xuqiang521/fe-daily-record/master/javascript/event-loop/FIFO.png)
 
 ## question
 
