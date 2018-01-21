@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Layout</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+.wrap {
+  width: 100%;
+  height: 100px;
+  background: green;
+}
+.auto-layout {
+  height: 100px;
+}
+.auto-layout > div {
+  height: 100%;
+}
+.left {
+  width: 120px;
+  background: gray;
+}
+.right {
+  width: 120px;
+  background: blue;
+}
+.center {
+  background: red;
+}
+.wrap1 {
+  display: table;
+  text-align: center;
+}
+.wrap1 .center {
+  display: inline-block;  
+  vertical-align:middle; 
+}
+.wrap1::after {
+  content: '';
+  height: 100%;  
+  display: inline-block;
+  vertical-align: middle;
+}
+.wrap2 {
+  display: flex;
+  align-items: center;
+}
+.wrap2 .center {
+  margin: 0 auto;
+}
+.wrap3 {
+  position: relative;
+}
+.wrap3 .center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.auto1 .left {
+  float: left;
+}
+.auto1 .right {
+  float: right;
+}
+.auto2 .left {
+  float: left;
+}
+.auto2 .right {
+  float: right;
+}
+.auto2 .center {
+  width: calc(100% - 240px);
+  margin: 0 auto;
+}
+.auto3 {
+  display: flex;
+}
+.auto3 .center {
+  flex: 1;
+}
+.auto4 {
+  position: relative;
+}
+.auto4 .left, .auto4 .right {
+  position: absolute;
+  top: 0;
+}
+.auto4 .left {
+  left: 0;
+}
+.auto4 .right {
+  right: 0;
+}
+.auto4 .center {
+  margin: 0 120px;
+}
+.auto5 .left {
+  float: left;
+  margin-left: -100%;
+}
+.auto5 .right {
+  float: left;
+  margin-left: -120px;
+}
+.auto5 .center {
+  float: left;
+  width: 100%;
+}
+.center-content {
+  margin: 0 120px;
+}
+</style>
+</head>
+<body>
+  <h2>左右垂直居中方案1：IFC 布局</h2>
+  <pre>
+  /* 设置 inline-block 则会在外层产生 IFC，高度设为 100% 撑开 wrap 的高度 */
+  .wrap1 {
+    display: table;
+    text-align: center;
+  }
+  .wrap1::after {
+    content: '';
+    height: 100%;  
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .center {
+    display: inline-block;  
+    vertical-align: middle; 
+  }
+  </pre>
+  <div class="wrap wrap1">
+    <div class="center">center div</div>
+  </div>
+  <h2>左右垂直居中方案2：flex 布局</h2>
+  <pre>
+  .wrap2 {
+    display: flex;
+    align-items: center;
+  }
+  .wrap2 .center {
+    margin: 0 auto;
+  }
+  </pre>
+  <div class="wrap wrap2">
+    <div class="center">center div</div>
+  </div>
+  <h2>左右垂直居中方案3：position 布局</h2>
+  <pre>
+  .wrap3 {
+    position: relative;
+  }
+  .wrap3 .center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  </pre>
+  <div class="wrap wrap3">
+    <div class="center">center div</div>
+  </div>
+  <h2>左右定宽，中间自适应方案1：float 布局</h2>
+  <pre>
+  .auto1 .left {
+    float: left;
+  }
+  .auto1 .right {
+    float: right;
+  }
+  </pre>
+  <div class="auto-layout auto1">
+    <div class="left">left div</div>
+    <div class="right">right div</div>
+    <div class="center">center div</div>
+  </div>
+  <h2>左右定宽，中间自适应方案2：float + calc 布局</h2>
+  <pre>
+  .auto2 .left {
+    float: left;
+  }
+  .auto2 .right {
+    float: right;
+  }
+  .auto2 .center {
+    width: calc(100% - 240px);
+    margin: 0 auto;
+  }
+  </pre>
+  <div class="auto-layout auto2">
+    <div class="left">left div</div>
+    <div class="right">right div</div>
+    <div class="center">center div</div>
+  </div>
+  <h2>左右定宽，中间自适应方案3：flex 布局</h2>
+  <pre>
+  .auto3 {
+    display: flex;
+  }
+  .auto3 .center {
+    flex: 1;
+  }
+  </pre>
+  <div class="auto-layout auto3">
+    <div class="left">left div</div>
+    <div class="center">center div</div>
+    <div class="right">right div</div>
+  </div>
+  <h2>左右定宽，中间自适应方案4：position 布局</h2>
+  <pre>
+  .auto4 {
+    position: relative;
+  }
+  .auto4 .left, .auto4 .right {
+    position: absolute;
+    top: 0;
+  }
+  .auto4 .left {
+    left: 0;
+  }
+  .auto4 .right {
+    right: 0;
+  }
+  .auto4 .center {
+    margin: 0 120px;
+  }
+  </pre>
+  <div class="auto-layout auto4">
+    <div class="left">left div</div>
+    <div class="center">center div</div>
+    <div class="right">right div</div>
+  </div>
+  <h2>左右定宽，中间自适应方案5：margin 负值法</h2>
+  <pre>
+  .auto5 .left {
+    float: left;
+    margin-left: -100%;
+  }
+  .auto5 .right {
+    float: left;
+    margin-left: -120px;
+  }
+  .auto5 .center {
+    float: left;
+    width: 100%;
+  }
+  .center-content {
+    margin: 0 120px;
+  }
+  </pre>
+  <div class="auto-layout auto5">
+    <div class="center">
+      <div class="center-content">center div</div>
+    </div>
+    <div class="left">left div</div>
+    <div class="right">right div</div>
+  </div>
+</body>
+</html>
