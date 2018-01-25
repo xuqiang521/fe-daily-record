@@ -16,3 +16,30 @@
 
 1. 通过增加cookie和session机制，现在的网络请求其实是有状态的
 2. 在没有状态的http协议下，服务器也一定会保留你每次网络请求对数据的修改，但这跟保留每次访问的数据是不一样的，保留的只是会话产生的结果，而没有保留会话
+
+## HTTP/2 和 HTTPS
+
+### HTTP/2
+
+#### 升级 HTTP/2 相关要求
+
+1. nginx 最低版本是 1.10.0
+2. openssl 的最低版本是 1.0.2
+3. http/2 在实现上基本上只支持 https
+
+#### HTTP/2 的优势
+
+1. 多路复用：可以用同一个连接传输多个资源
+2. Server Push：让服务先把其它很可能客户端会请求的资源先push发给你，不用等到请求的时候再发送，这样可以提高页面整体的加载速度
+3. 报文头压缩和二进制编码
+
+#### HTTP/2 相关文章
+
+1. [怎样把网站升级到http/2](https://zhuanlan.zhihu.com/p/29609078)
+2. [HTTP/2.0 相比1.0有哪些重大改进？](https://www.zhihu.com/question/34074946)
+
+### HTTPS
+
+1. [HTTPS 的故事](https://zhuanlan.zhihu.com/p/33043251)
+2. [一文完全理解 HTTPS](http://liushaoqing.me/2018/01/18/https/#more)
+3. [http 和 https 有何区别？如何灵活使用？](https://www.zhihu.com/question/19577317)
