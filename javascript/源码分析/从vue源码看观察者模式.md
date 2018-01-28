@@ -40,9 +40,7 @@ var vm = new Vue({
 })
 ```
 
-
-
-> ![](/Users/xuqiang/Downloads/vue1.png)
+> ![](https://raw.githubusercontent.com/xuqiang521/fe-daily-record/master/javascript/源码分析/vue1.png)
 
 ### 1、实现数据劫持
 
