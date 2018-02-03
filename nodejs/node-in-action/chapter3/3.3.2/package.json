@@ -1,0 +1,22 @@
+{
+  "name": "chat-application",
+  "version": "1.0.0",
+  "description": "Chat Application",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "chat",
+    "node",
+    "socket"
+  ],
+  "author": "qiangdada",
+  "license": "MIT",
+  "dependencies": {
+    
+  }
+}
