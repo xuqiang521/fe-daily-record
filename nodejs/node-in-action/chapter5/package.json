@@ -1,0 +1,30 @@
+{
+  "name": "chapter5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cli_tasks.js",
+  "dependencies": {
+    "isarray": "^1.0.0",
+    "inherits": "^2.0.3",
+    "core-util-is": "^1.0.2",
+    "process-nextick-args": "^1.0.7",
+    "mysql": "^2.15.0",
+    "bignumber.js": "^4.0.4",
+    "safe-buffer": "^5.1.1",
+    "readable-stream": "^2.3.3",
+    "sqlstring": "^2.3.0",
+    "string_decoder": "^1.0.3",
+    "util-deprecate": "^1.0.2"
+  },
+  "devDependencies": {
+    "mongodb": "^3.0.2",
+    "mongoose": "^5.0.3",
+    "redis": "^2.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
