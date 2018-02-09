@@ -1,0 +1,31 @@
+{
+  "name": "chapter7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cookie_parser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "basic-auth": "^2.0.0",
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.1",
+    "connect": "^3.6.5",
+    "connect-redis": "^3.3.3",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "errorhandler": "^1.5.0",
+    "express-session": "^1.15.6",
+    "limit": "^0.0.1",
+    "method-override": "^2.3.10",
+    "morgan": "^1.9.0",
+    "qs": "^6.5.1",
+    "serve-favicon": "^2.4.5",
+    "serve-index": "^1.9.1",
+    "serve-static": "^1.13.1",
+    "vhost": "^3.0.2"
+  }
+}
