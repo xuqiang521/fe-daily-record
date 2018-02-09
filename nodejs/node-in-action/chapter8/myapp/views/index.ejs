@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <!-- <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p> -->
+    <h1>Photos</h1>
+    <div id="photos">
+      <% photos.forEach((photo) => { %>
+        <div class="photo">
+          <h2><%= photo.name %></h2>
+          <img src="<%= photo.path %>" alt="">
+        </div>
+      <% }) %>
+    </div>
+  </body>
+</html>
