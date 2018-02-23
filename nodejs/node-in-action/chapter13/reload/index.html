@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Socket.IO dynamically reloading CSS stylesheets</title>
+  <link rel="stylesheet" href="/header.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>This is our Awesome Webpage!</h1>
+  <div id="body">
+    <p>If this file (<code>index.html</code>) is edited, then the server will send a message 
+    to the browser using Socket.IO telling it to refresh the page.</p>
+
+    <p>If either of the stylesheets (<code>header.css</code> or <code>styles.css</code>) are
+    edited, then the server will send a message to the browser using Socket.IO telling it to
+    dynamically reload the CSS, without refreshing the page.</p>
+  </div>
+  <div id="event-log"></div>
+</body>
+<script src="socket.io/socket.io.js"></script>
+<script>
+  window.onload = function () {
+    var socket = io.connect()
+
+    socket.on('reload', () => {
+      window.location.reload()
+    })
+
+    socket.on('stylesheet', (sheet) => {
+      var link = document.createElement('link')
+      var head = document.getElementsByTagName('head')[0]
+      link.setAttribute('rel', 'stylesheet')
+      link.setAttribute('type', 'text/css')
+      link.setAttribute('href', sheet)
+      head.appendChild(link)
+    })
+  }
+</script>
+</html>

@@ -1,0 +1,27 @@
+// console.log('\033[32mhello\033[39m');
+
+var ansi = require('ansi')
+var cursor = ansi(process.stdout)
+
+cursor
+  .reset()
+  .write(' ')
+  .bold()
+  .underline()
+  .bg.white()
+  .fg.black()
+  .write('\nNode.js in Action')
+  .fg.reset()
+  .bg.reset()
+  .resetUnderline()
+  .resetBold()
+  .write(' \n')
+  .fg.green()
+  .write(' by:\n')
+  .fg.cyan()
+  .write('    Mike Cantelon\n')
+  .fg.magenta()
+  .write('    TJ Holowaychuk\n')
+  .fg.yellow()
+  .write('    Nathan Rajlich\n\n')
+  .reset()

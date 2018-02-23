@@ -1,0 +1,16 @@
+total 88
+-rw-r--r--    1 xuqiang  staff   382  2 20 18:35 child_process.js
+drwxr-xr-x    4 xuqiang  staff   128  2 10 16:48 clock-server
+-rw-r--r--    1 xuqiang  staff   599  2 19 17:40 copy.js
+-rw-r--r--    1 xuqiang  staff   222  2 19 17:27 debug-mode.js
+-rw-r--r--    1 xuqiang  staff   185  2 20 16:34 fs-watchFile.js
+drwxr-xr-x    3 xuqiang  staff    96  2 20 16:34 log
+-rw-r--r--    1 xuqiang  staff   866  2 20 18:35 ls-result.txt
+-rw-r--r--    1 xuqiang  staff   423  2 14 22:28 net-server.js
+-rw-r--r--    1 xuqiang  staff   310  2 14 22:22 net_tcp.js
+-rw-r--r--    1 xuqiang  staff   294  2 14 22:34 netcat.js
+drwxr-xr-x  168 xuqiang  staff  5376  2 20 18:25 node_modules
+-rw-r--r--    1 xuqiang  staff   365  2 20 18:25 package.json
+-rw-r--r--    1 xuqiang  staff   331  2 19 17:35 process-event.js
+drwxr-xr-x    6 xuqiang  staff   192  2 10 17:07 reload
+-rw-r--r--    1 xuqiang  staff   472  2 20 18:23 std-out-in.js
