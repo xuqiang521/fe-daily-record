@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>工厂方法模式：通过对产品类的抽象使其创建业务主要负责用于创建多类产品的实例</div>
+	<div id="container">工厂方法模式创建多类对象</div>	
+</body>
+<script>
+//创建Java学科类
+var Java = function(content){
+	//将内容保存在content里面以备日后使用
+	this.content = content;
+	// 创建对象时，通过闭包，直接执行，将内容按需求的样式插入到页面内
+	(function(content){
+		var div = document.createElement('div');
+		div.innerHTML = content;
+		div.style.color = 'green';
+		document.getElementById('container').appendChild(div);
+	})(content);
+}
+//创建JavaScript学科
+var JavaScript = function(content){
+	this.content = content;
+	(function(content){
+		var div = document.createElement('div');
+		div.innerHTML = content;
+		div.style.background = 'pink';
+		document.getElementById('container').appendChild(div);
+	})(content);
+}
+//学科类工厂
+function JobFactory(type,content){
+	switch(type){
+		case 'java':
+			return new Java(content);
+		case 'JavaScript':
+			return new JavaScript(content);
+	}
+}
+// JobFactory('JavaScript','JavaScript精通之路');
+//安全模式创建的工厂类
+var Factory = function(type,content){
+	if(this instanceof Factory){
+		var s = new this[type](content);
+		return s;
+	}else{
+		return new Factory(type,content);
+	}
+}
+//工厂原型设置创建所有类型数据对象的基类
+Factory.prototype = {
+	Java:function(content){
+		this.content = content;
+		(function(content){
+			var div = document.createElement('div');
+			div.innerHTML = content;
+			div.style.color = 'red';
+			document.getElementById('container').appendChild(div);
+		})(content);
+	},
+	JavaScript:function(content){
+		this.content = content;
+		(function(content){
+			var div = document.createElement('div');
+			div.innerHTML = content;
+			div.style.background = 'pink';
+			document.getElementById('container').appendChild(div);
+		})(content);
+	},
+	UI:function(content){
+		this.content = content;
+		(function(content){
+			var div = document.createElement('div');
+			div.innerHTML = content;
+			div.style.border = '1px solid red';
+			document.getElementById('container').appendChild(div);
+		})(content);
+	}
+}
+var data = [
+	{type:'JavaScript',content:'JavaScript精通之路'},
+	{type:'Java',content:'Java精通之路'},
+	{type:'UI',content:'UI精通之路'}
+];
+for(var i=0;i<data.length;i++){
+	new Factory(data[i].type,data[i].content);
+}
+</script>
+</html>

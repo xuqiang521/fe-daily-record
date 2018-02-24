@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+	//封装
+	// var Book = function(id,bookname,price){
+	// 	if(this instanceof Book){
+	// 		this.id = id;
+	// 		this.bookname = bookname;
+	// 		this.price = price;
+	// 	}else{
+	// 		return new Book(id,bookname,price);
+	// 	}
+	// }
+	// Book.prototype = {
+	// 	show:function(){
+	// 		return this;
+	// 	}
+	// }
+	// var book = new Book(10,'JS',50);
+	// console.log(book.bookname);
+	// var book1 = new Book(11,'NODE',45);
+	// console.log(book1.bookname)
+	//属性方法和封装
+	// var Book = function(id,name,price){
+	// 	//私有属性
+	// 	var num = 1;
+	// 	//私有方法
+	// 	function checkId(){
+	// 		//...
+	// 	};
+	// 	//特权方法
+	// 	this.setName = function(name){
+
+	// 	}
+	// 	this.getName = function(){
+	// 		return this.name;
+	// 	}
+	// 	this.setPrice = function(){
+
+	// 	}
+	// 	this.getPrice = function(){
+	// 		return this.price;
+	// 	}
+	// 	//对象共有属性
+	// 	this.id = id;
+	// 	//对象共有方法
+	// 	this.copy = function(){
+	// 		//...
+	// 	}
+	// 	//构造器
+	// 	this.setName(name);
+	// 	this.setPrice(price);
+	// }
+	//继承
+	//类式继承
+	// function SuperClass(){
+	// 	this.superValue = true;
+	// 	this.books = ['JS','JAVA'];
+	// }
+	// SuperClass.prototype.getSuperValue = function(){
+	// 	return this.superValue;
+	// }
+	// function SubClass(){
+	// 	this.subValue = false;
+	// }
+	// SubClass.prototype = new SuperClass();
+	// SubClass.prototype.getSubValue = function(){
+	// 	return this.subValue;
+	// }
+	// var sub = new SubClass();
+	// console.log(sub.getSuperValue());
+	// console.log(sub.getSubValue());
+	// console.log(sub instanceof SuperClass); //true
+	// console.log(sub instanceof SubClass);	//true
+	// console.log(SubClass instanceof SuperClass); //false
+	// console.log(SubClass.prototype instanceof SuperClass); //true
+	// console.log(sub.books) //['JS','JAVA']
+	// sub.books.push('HTML');
+	// var sub1 = new SubClass();
+	// console.log(sub1.books); //['JS','JAVA','HTML']
+	//构造函数继承
+	// function SuperClass(id,books){
+	// 	this.id = id;
+	// 	this.books = ['JS','JAVA'];
+	// }
+	// SuperClass.prototype.showBooks = function(){
+	// 	return this.books;
+	// }
+	// function SubClass(id,books){
+	// 	SuperClass.call(this,id,books)
+	// }
+	// var sub = new SubClass();
+	// sub.books.push('CSS');
+	// console.log(sub.books); //['JS','JAVA','CSS']
+	// var sub1 = new SubClass('superClass');
+	// console.log(sub1.books); //['JS','JAVA']
+	// console.log(sub.showBooks()); //Uncaught TypeError: sub.showBooks is not a function
+	// //组合继承
+	// function SuperClass(name){
+	// 	this.name = name;
+	// 	this.books = ['JS','JAVA'];
+	// }
+	// SuperClass.prototype.getName = function(){
+	// 	return this.name;
+	// }
+	// function SubClass(name,time){
+	// 	SuperClass.call(this,name);
+	// 	this.time = time;
+	// }
+	// SubClass.prototype = new SuperClass();
+	// SubClass.prototype.getTime = function(){
+	// 	return this.time;
+	// }
+	// var sub = new SubClass('superClass');
+	// sub.books.push('CSS');
+	// console.log(sub.books); //['JS','JAVA','CSS']
+	// console.log(sub.getName()); //superClass
+	// var sub1 = new SubClass('superClass');
+	// console.log(sub1.books); //['JS','JAVA']
+	//原型式继承
+	// function inheritObject(o){
+	// 	//声明一个过渡函数
+	// 	function F(){}
+	// 	//过渡对象的原型继承父对象
+	// 	F.prototype = o;
+	// 	return new F();
+	// }
+	// var book = {
+	// 	name:'js book',
+	// 	alikeBook:['css book','html book']
+	// }
+	// var newBook = inheritObject(book);
+	// newBook.name = 'ajax book';
+	// newBook.alikeBook.push('xml book');
+	// var otherBook = inheritObject(book);
+	// otherBook.name = 'flash book';
+	// otherBook.alikeBook.push('as book');
+	// console.log(newBook.name); //ajax book
+	// console.log(newBook.alikeBook); //['css book','html book','xml book','as book']
+	// console.log(otherBook.name); //flash book
+	// console.log(otherBook.alikeBook); //['css book','html book','xml book','as book']
+	// console.log(book.name); //js book
+	// console.log(book.alikeBook); //['css book','html book','xml book','as book']
+	//寄生式继承
+	// //声明基对象
+	// function inheritObject(o){
+	// 	//声明一个过渡函数
+	// 	function F(){}
+	// 	//过渡对象的原型继承父对象
+	// 	F.prototype = o;
+	// 	return new F();
+	// }
+	// var book = {
+	// 	name:'js book',
+	// 	alikeBook:['css book','html book']
+	// }
+	// function createBook(obj){
+	// 	//通过原型继承方式创建对象
+	// 	var o = new inheritObject(obj);
+	// 	//拓展新对象
+	// 	o.getName = function(){
+	// 		console.log(this.name);
+	// 	};
+	// 	//返回拓展后的新对象
+	// 	return o;
+	// }
+	/**
+	 * 寄生式继承 继承原型
+	 * 传递参数 subClass 子类
+	 * 传递参数 superClass 父类
+	 */
+	function inheritObject(o) {
+		//声明一个过渡函数
+		function F() {}
+		//过渡对象的原型继承父对象
+		F.prototype = o;
+		return new F();
+	}
+
+	function inheritPrototype(subClass, superClass) {
+		//复制一份父类的原型副本保存在变量
+		var p = inheritObject(superClass.prototype);
+		//修正因为重写子类原型导致子类的constructor
+		p.constructor = subClass;
+		//设置子类的原型
+		subClass.prototype = p;
+	}
+	//定义父类
+	function SuperClass(name) {
+		this.name = name;
+		this.colors = ['red', 'blue'];
+	}
+	//定义父类原型方法
+	SuperClass.prototype.getName = function () {
+		return this.name;
+	}
+	//定义子类
+	function SubClass(name, time) {
+		//构造函数继承
+		SuperClass.call(this, name);
+		//子类新增属性
+		this.time = time;
+	}
+	//寄生式继承父类原型
+	inheritPrototype(SubClass, SuperClass);
+	//子类新增原型方法
+	SubClass.prototype.getTime = function () {
+		return this.time;
+	}
+	var test1 = new SubClass('js book', 2014);
+	var test2 = new SubClass('csc book', 2013);
+	test1.colors.push('black');
+	console.log(test1.colors); //['red','blue','black']
+	console.log(test2.colors); //['red','blue']
+	console.log(test2.getName());
+	console.log(test2.getTime());
+	// *
+	//  * 多继承
+
+	// // 单继承 属性复制
+	// var extend = function(target,source){
+	// 	// 遍历源对象中的属性
+	// 	for(var property in source){
+	// 		!target[property] && (target[property] = source[property]);
+	// 	}
+	// 	// 返回目标对象
+	// 	return target;
+	// }
+	// var book = {
+	// 	name:'JS',
+	// 	alike:['css','html']
+	// }
+	// var anotherBook = {
+	// 	color:'red',
+	// 	name:'js'
+	// }
+	// extend(anotherBook,book);
+	// console.log(anotherBook.name); //JS
+	// console.log(anotherBook.alike); //['css','html']
+	// anotherBook.alike.push('ajax'); 
+	// anotherBook.name = '设计模式';
+	// console.log(anotherBook.name); //设计模式
+	// console.log(anotherBook.alike); //['css','html','ajax']
+	// console.log(book.name); //JS
+	// console.log(book.alike); //['css','html','ajax']
+	// // 多继承 属性复制
+	// Object.prototype.mix = function(){
+	// 	var i = 1, //从第二个参数起为被继承的对象
+	// 		len = arguments.length, //获取参数长度
+	// 		target = arguments[0], // 第一个对象为目标对象
+	// 		arg; // 缓存参数对象
+	// 	for(;i<len;i++){
+	// 		//缓存当前对象
+	// 		arg = arguments[i];
+	// 		// 遍历被继承对象中的属性
+	// 		for(var property in arg){
+	// 			target[property] = arg[property];
+	// 		}
+	// 	}
+	// 	// 返回目标对象
+	// 	return target;
+	// }
+</script>
+
+</html>

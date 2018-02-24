@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<div id="mybutton">适配器模式：将一个类(对象)的接口(方法或属性)转化成另外一个接口，以满足用户需求，使类(对象)之间的接口的不兼容问题通过适配器得以解决</div>
+</body>
+<script src="jquery-1.10.2.min.js"></script>
+<script>
+	// 适配异类框架
+	// 定义框架
+	var A = A || {};
+	// 通过ID获取元素
+	A.g = function (id) {
+		return document.getElementById(id);
+	}
+	// 为元素绑定事件
+	A.on = function (id, type, fn) {
+		// 如果传递参数是字符串则以id处理，否则以元素对象处理
+		var dom = typeof id === 'string' ? this.g(id) : id;
+		// 标准DOM2级添加事件方式
+		if (dom.addEventListener) {
+			dom.addEventListener(type, fn, false);
+		} else if (dom.attachEvent) {
+			dom.attachEvent('on' + type, fn);
+		} else {
+			dom['on' + type] = fn;
+		}
+	}
+	A.on(window, 'load', function () {
+		// 按钮点击事件
+		A.on('mybutton', 'click', function () {
+			console.log('A')
+		})
+	})
+	A.g = function (id) {
+		// 通过jQuery获取jQuery对象，然后返回第一个成员
+		return $(id).get(0);
+	}
+	A.on = function (id, type, fn) {
+		// 如果传递参数是字符串则以id处理，否则以元素对象处理
+		var dom = typeof id === 'string' ? $('#' + id) : $(id);
+		dom.on(type, fn);
+	}
+	// 参数适配器
+	function doSomething(obj) {
+		var _adapter = {
+			name: '雨夜清荷',
+			title: '设计模式',
+			age: 24,
+			color: 'pink',
+			size: 100,
+			prize: 50
+		};
+		for (var i in _adapter) {
+			_adapter[i] = obj[i] || _adapter[i];
+		}
+		// 或者 $.extend(_adapter,obj) 注：此时可能会多添加属性
+		// do things
+		console.log(_adapter)
+	}
+	doSomething({
+		name: 'a',
+		title: '设计模式',
+		color: 'pink',
+		size: 100,
+		prize: 50,
+		a: 1
+	});
+	// 数据适配
+	var arr = ['JavaScript', 'book', '前端编程语言', '8月1日'];
+	var obj = {
+		name: '',
+		type: '',
+		title: '',
+		time: ''
+	}
+
+	function arrToObjAdapter(arr) {
+		return {
+			name: arr[0],
+			type: arr[1],
+			title: arr[2],
+			data: arr[3]
+		}
+	}
+	var adapterData = arrToObjAdapter(arr);
+	console.log(adapterData); //obj = {name:'JavaScript',type:'book',title:'前端编程语言',time:'8月1日'}
+	// 服务器端数据适配
+	// 为简化模型，这里使用jQuery的ajax方法，理想数据是一个一维数组
+	function ajaxAdapter(data) {
+		//处理数据并返回数据
+		return [data['key1'], data['key2'], data['key3']]
+	}
+	$.ajax({
+		url: 'someAddress.php',
+		success: function (data, status) {
+			if (data) {
+				// 使用适配后的数据-返回的对象
+				doSomething(ajaxAdapter(data));
+			}
+		}
+	});
+</script>
+
+</html>

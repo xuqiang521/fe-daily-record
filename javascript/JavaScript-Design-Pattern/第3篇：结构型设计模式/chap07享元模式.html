@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="container">享元模式：运用共享技术有效的支持大量的细粒的对象，避免对象间拥有相同内容造成多余的开销。</div>
+  <div id="next_page">下一页</div>
+</body>
+<!-- <script src="jquery-1.10.2.min.js"></script> -->
+<script>
+  // var article = [1,2,3,4,5,6,7]
+  // var Flyweight = function(){
+  //   // 已创建的元素
+  //   var created = [];
+  //   // 创建一个新闻包装容器
+  //   function create(){
+  //     var dom = document.createElement('div');
+  //     // 将容器插入新闻列表容器中
+  //     document.getElementById('container').appendChild(dom);
+  //     // 缓存新创建的元素
+  //     created.push(dom);
+  //     // 返回创建的新元素
+  //     return dom;
+  //   }
+  //   return {
+  //     // 获取创建新闻元素方法
+  //     getDiv : function(num){
+  //       // 如果已创建的元素小于当前页元素总个数，则创建
+  //       if(created.length<num){
+  //         return create();
+  //       }else{
+  //         // 获取第一个元素，并插入最后面
+  //         var div = created.shift();
+  //         created.push(div);
+  //         return div;
+  //       }
+  //     }
+  //   }
+  // }();
+  // // 初始化页面
+  // var paper = 0
+  //   , num = 5
+  //   , len = article.length;
+  // // 添加5条新闻
+  // for(var i=0;i<5;i++){
+  //   if(article[i]){
+  //     // 通过享元类获取创建的元素并写入新闻内容
+  //     Flyweight.getDiv(5).innerHTML = article[i];
+  //   }
+  // }
+  // // 下一页按钮绑定事件
+  // document.getElementById('next_page').onclick = function(){
+  //   // 如果新闻内容不足5条则返回
+  //   if(article.length<5){
+  //     return;
+  //   }
+  //   var n = ++paper * num % len //获取当前页的第一条新闻索引
+  //     , j = 0; //循环变量
+  //   // 插入5条新闻
+  //   for(;j<5;j++){
+  //     if(article[n + j]){
+  //       Flyweight.getDiv(5).innerHTML = article[n + j];
+  //     }else if(article[n + j -len]){
+  //       Flyweight.getDiv(5).innerHTML = article[n + j - len];
+  //     }else{
+  //       Flyweight.getDiv(5).innerHTML = '';
+  //     }
+  //   }
+  // }
+  // 享元动作
+  var Flyweight = {
+    moveX: function (x) {
+      this.x = x;
+    },
+    moveY: function (y) {
+      this.y = y;
+    }
+  }
+  // 人继承移动方法
+  var Player = function (x, y, c) {
+    this.x = x;
+    this.y = y;
+    this.color = c;
+  }
+  Player.prototype = Flyweight;
+  Player.prototype.changeC = function (c) {
+    this.color = c;
+  }
+  // 精灵继承移动方法
+  var Spirit = function (x, y, r) {
+    this.x = x;
+    this.y = y;
+    this.r = r;
+  }
+  Spirit.prototype = Flyweight;
+  Spirit.prototype.changeR = function (r) {
+    this.r = r;
+  }
+  // 创建一个人
+  var player1 = new Player(5, 6, 'red');
+  console.log(player1);
+  player1.moveX(6);
+  player1.moveY(7);
+  player1.changeC('pink');
+  console.log(player1);
+  // 创建一个精灵
+  var spirit1 = new Spirit(2, 3, 4);
+  console.log(spirit1);
+  spirit1.moveX(3);
+  spirit1.moveY(4);
+  spirit1.changeR(5);
+  console.log(spirit1)
+</script>
+
+</html>

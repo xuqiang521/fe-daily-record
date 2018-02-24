@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<div>原型模式：用原型实例指向创建的类，使得用于创建的新的对象的类共享原型对象的属性以及方法。</div>
+</body>
+<script>
+	var LoopImages = function (imgArr, container) {
+		this.imgArr = imgArr; //轮播图片数组
+		this.container = container; //轮播图片容容器
+	}
+	LoopImages.prototype = {
+		// 创建轮播图片
+		createImage: function () {
+			console.log('LoopImages createImage function');
+		},
+		// 切换下一张图片
+		changeImage: function () {
+			console.log('LoopImages changeImage function');
+		}
+	}
+	// 上下滑动切换类
+	var SlideLoopImg = function (imgArr, container) {
+		// 构造函数继承图片轮播类
+		LoopImages.call(this, imgArr, container);
+	}
+	SlideLoopImg.prototype = new LoopImages();
+	// 重写继承的切换下一张的图片方法
+	SlideLoopImg.prototype.changeImage = function () {
+		console.log('SlideLoopImg changeImage function');
+	}
+	// 渐隐切换类
+	var FadeLoopImg = function (imgArr, container, arrow) {
+		LoopImages.call(this, imgArr, container);
+		// 切换箭头私有量
+	}
+	FadeLoopImg.prototype = new LoopImages();
+	FadeLoopImg.prototype.changeImage = function () {
+		console.log('FadeLoopImg changeImage function');
+	}
+	var fadeImg = new FadeLoopImg(['1.jpg', '2.jpg'], 'slider', ['left.png', 'right.png']);
+	fadeImg.changeImage();
+	LoopImages.prototype.getImageLength = function () {
+		return this.imgArr.length;
+	}
+	FadeLoopImg.prototype.getContainer = function () {
+		return this.container;
+	}
+	console.log(fadeImg.getImageLength());
+	console.log(fadeImg.getContainer());
+	/**
+	 * 基于已经存在的模块对象克隆出新的对象的模式
+	 * arguments[0],arguments[1],arguments[2] : 参数1，参数2，参数3 表示模板对象
+	 * 注意。这里对模块引用类型的属性实质上进行了浅复制
+	 */
+	function prototypeExtend() {
+		var F = function () {}, //缓存类，为实例化返回对象临时创建
+			args = arguments, //模块对象参数序列
+			i = 0,
+			len = args.length;
+		for (; i < len; i++) {
+			// 遍历每个模块对象中的属性
+			for (var k in args[i]) {
+				// 将这些属性复制到缓存类原型中
+				F.prototype[k] = args[i][k];
+			}
+		}
+		// 返回缓存类的一个实例
+	}
+</script>
+
+</html>

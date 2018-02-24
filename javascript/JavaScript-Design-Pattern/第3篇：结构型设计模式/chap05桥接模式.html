@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<div>桥接模式：在系统沿着多个维度变化的同时，又不增加其复杂度并已达到解耦</div>
+</body>
+<script>
+	// 抽象
+	// function changeColor(dom,color,bg){
+	// 	// 设置元素的字体颜色
+	// 	dom.style.color = color;
+	// 	// 设置元素的背景颜色
+	// 	dom.style.background = bg;
+	// }
+	// var spans = document.getElementsByTagName('span');
+	// span[0].onmouseover = function(){
+	// 	changeColor(this,'red','#ddd');
+	// }
+	// span[0].onmouseout = function(){
+	// 	changeColor(this,'#333','#f5f5f5');
+	// }
+
+	/**
+	 * 多元化对象
+	 * 多维变量类
+	 */
+	// 运动单元
+	function Speed(x, y) {
+		this.x = x;
+		this.y = y;
+	}
+	Speed.prototype.run = function () {
+		console.log('运动起来');
+	}
+	// 着色单元
+	function Color(color) {
+		this.color = color;
+	}
+	Color.prototype.draw = function () {
+		console.log('绘制色彩');
+	}
+	// 变形单元
+	function Shape(shape) {
+		this.shape = shape;
+	}
+	Shape.prototype.change = function () {
+		console.log('改变形状');
+	}
+	// 说话单元
+	function Speek(word) {
+		this.word = word;
+	}
+	Speek.prototype.say = function () {
+		console.log('书写字体');
+	}
+	// 创建一个球类，既可以运动，又可以着色
+	function Ball(x, y, c) {
+		// 实现运动单元
+		this.speed = new Speed(x, y);
+		// 实现着色单元
+		this.color = new Color(c);
+	}
+	Ball.prototype.init = function () {
+		// 实现运动
+		this.speed.run();
+		// 实现着色
+		this.color.draw();
+	}
+	var ball = new Ball(10, 12, 'red');
+	ball.init();
+</script>
+
+</html>

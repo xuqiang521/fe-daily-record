@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+	//原型添加
+	Function.prototype.addMethod = function (name, fn) {
+		this.prototype[name] = fn;
+		return this;
+	};
+	var Methods = function () {};
+	Methods.addMethod('checkName', function () {
+		console.log('checkName');
+	}).addMethod('checkMail', function () {
+		console.log('checkMail');
+	})
+	var m = new Methods();
+	console.log(m);
+	m.checkName();
+	m.checkMail();
+	//链式添加
+	Function.prototype._addMethod = function (name, fn) {
+		this[name] = fn;
+		return this;
+	}
+	var methods = function () {};
+	methods._addMethod('_checkName', function () {
+		console.log(this);
+		console.log('_checkName');
+		return this;
+	})._addMethod('_checkMail', function () {
+		console.log(this);
+		console.log('_checkMail');
+		return this;
+	})
+	methods._checkName()._checkMail();
+</script>
+
+</html>

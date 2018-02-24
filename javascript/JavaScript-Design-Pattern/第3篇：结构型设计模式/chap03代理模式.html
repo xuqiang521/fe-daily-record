@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<div>代理模式：由于一个对象不能直接引用另一个对象，所以需要通过代理模式对象在这两个对象之间起到中介的作用</div>
+</body>
+<script src="jquery-1.10.2.min.js"></script>
+<script>
+	// 当前域www.xx.com
+	// $.ajax({
+	// 	url:'http://upload.xx.com/upload.php',
+	// 	success:function(data){
+	// 		// 无法获取返回的数据
+	// 	}
+	// });
+	/**
+	 * JavaScript同源策略,具体限制如下
+	 * 1.跨域调用其他页面，如http://www.baidu.com于http://www.taobao.com
+	 * 2.同一域名不同端口号，如http://www.baidu.com:8001与http://www.baidu.com:8002
+	 * 3.同一域名不同协议，如http://www.baidu.com与https://www.baidu.com
+	 * 4.域名与域名对应的IP，如http://www.baidu.com与http://61.135.169.125
+	 * 5.主域与子域，如http://www.baidu.com与http://b.a.com
+	 * 6.子域与子域，如http://tieba.baidu.com与http://fanyi.baidu.com
+	 */
+	// 统计代理
+	var Count = (function () {
+		// 缓存图片
+		var _img = new Image();
+		// 返回统计函数
+		return function (param) {
+			// 统计请求字符串
+			var str = 'http://www.count.com/a.gif?';
+			// 拼接请求字符串
+			for (var i in param) {
+				str += i + '=' + param[i];
+			}
+			_img.src = str;
+		}
+	})();
+	// 测试用例，统计num
+	Count({
+		num: 10
+	});
+	// JSONP
+</script>
+
+</html>
