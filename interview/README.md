@@ -17,6 +17,8 @@
 
 具体参考[从指向看JavaScript](https://zhuanlan.zhihu.com/p/28058983)
 
+7. [DOM操作相关](https://juejin.im/post/58f558efac502e006c3e5c97)
+
 ## js 基础（es6）
 1. let，const：let 产生块级作用域（通常配合 for 循环或者 {} 进行使用产生块级作用域），const 申明的变量是常量（内存地址不变）
 2. Promise：这里你谈 promise 的时候，除了将他解决的痛点以及常用的 API 之外，最好进行拓展把 eventloop 带进来好好讲一下，microtask、macrotask 的执行顺序，如果看过 promise 源码，最好可以谈一谈 原生 Promise 是如何实现的。Promise 的关键点在于callback 的两个参数，一个是 resovle，一个是 reject。还有就是 Promise 的链式调用（Promise.then()，每一个 then 都是一个责任人）。
