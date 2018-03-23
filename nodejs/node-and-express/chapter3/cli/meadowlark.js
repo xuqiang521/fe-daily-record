@@ -9,6 +9,8 @@ var items = ['A', 'B', 'C', 'D']
 app.engine('handlebars', handlebars.engine)
 app.set('view engine', 'handlebars')
 
+app.use(express.static(__dirname + '/public'))
+
 app.set('port', process.env.PORT || 3000)
 
 app.get('/', (req, res) => {
@@ -21,19 +23,17 @@ app.get('/about', (req, res) => {
 })
 
 // 404 catch-all 处理器（中间件）
-// app.use((req, res, next) => {
-//   res.status(404)
-//   res.render('404')
-// })
+app.use((req, res, next) => {
+  res.status(404)
+  res.render('404')
+})
 
-// // 500 错误处理器（中间件）
-// app.use((err, req, res, next) => {
-//   console.err(err.stack)
-//   res.status(500)
-//   res.render('500')
-// })
-
-app.use(express.static(__dirname + '/public'))
+// 500 错误处理器（中间件）
+app.use((err, req, res, next) => {
+  console.err(err.stack)
+  res.status(500)
+  res.render('500')
+})
 
 // app.get('/', (req, res) => {
 //   res.type('text/plain')
