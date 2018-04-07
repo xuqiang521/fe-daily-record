@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Draw a point with a mouse click</title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="webgl" width="400" height="400">
+      你的浏览器不支持WebGL，请更换新的浏览器
+    </canvas>
+
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+  </body>
+</html>
+
+<script>
+// 顶点着色器程序
+var VSHADER_SOURCE="" +
+  'attribute vec4 a_Position;\n' +
+  'void main() {\n' +
+  '  gl_Position = a_Position;\n' +
+  '  gl_PointSize = 5.0;\n' +
+  '}\n'
+
+// 片元着色器程序
+var FSHADER_SOURCE = "" +
+  'void main() {\n' +
+  '  gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);\n' +
+  '}\n'
+
+function main() {
+  // 获取<canvas>元素
+  var canvas = document.getElementById("webgl")
+
+  // 获取到WebGL的上下文
+  var gl = getWebGLContext(canvas)
+
+  //不支持WebGL的浏览器将打印一个错误，并结束代码运行
+  if (!gl) {
+    console.log("浏览器不支持WebGL")
+    return
+  }
+
+  // 初始化着色器
+  if(!initShaders(gl,VSHADER_SOURCE,FSHADER_SOURCE)) {
+    console.log("初始化着色器失败")
+    return
+  }
+
+  //获取attribute变量的存储位置
+  var a_Position = gl.getAttribLocation(gl.program, "a_Position")
+  if(a_Position < 0){
+    console.log("无法获取变量的存储位置")
+    return
+  }
+
+  // 指定一个覆盖（清空）canvas的颜色
+  gl.clearColor(0.0, 0.0, 0.0, 1.0)
+
+  // 清除canvas
+  gl.clear(gl.COLOR_BUFFER_BIT)
+
+  // 注册鼠标点击事件
+  canvas.onmousedown = function (event) {
+    click(event, gl, canvas, a_Position)
+  }
+
+  var g_points = [] // 声明一个可以存储点的信息的数组
+  function click(event, gl, canvas, a_Position) {
+    var e = event || window.event
+    var x = e.clientX // 鼠标点击处的 x 坐标
+    var y = e.clientY // 鼠标点击处的 y 坐标
+    var rect = e.target.getBoundingClientRect() // 组件封装方法，返回对象，里面含有点击的标签的距离浏览器左侧、上侧、右侧、下侧和自身的高宽
+
+    x = ((x - rect.left) - canvas.height / 2)/(canvas.height / 2) // 计算出x轴WebGL的浮点数
+    y = (canvas.width / 2 - (y - rect.top))/(canvas.width / 2)  // 计算出y轴WebGL的浮点数
+
+    // 将坐标存储到 g_points 数组中
+    g_points.push({ x: x, y: y })
+
+    // 清除canvas
+    gl.clear(gl.COLOR_BUFFER_BIT)
+
+    var len = g_points.length
+    for(var i = 0; i<len; i++) { // 循环添加点
+      // 将点的位置传递到变量中 a_position
+      gl.vertexAttrib3f(a_Position, g_points[i].x, g_points[i].y, 0.0)
+
+      // 绘制点
+      gl.drawArrays(gl.POINTS, 0, 1)
+    }
+  }
+}
+</script>

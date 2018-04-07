@@ -14,6 +14,25 @@
   <script src="../lib/webgl-utils.js"></script>
   <script src="../lib/webgl-debug.js"></script>
   <script src="../lib/cuon-utils.js"></script>
-  <script src="HelloCanvas.js"></script>
 </body>
 </html>
+
+<script>
+function main () {
+  // 获取<canvas>元素
+  var canvas = document.getElementById('webgl')
+
+  // 获取webgl绘图上下文
+  var gl = getWebGLContext(canvas)
+  if (!gl) {
+    console.log('Failed to get the rendering context for WebGL')
+    return
+  }
+  
+  // 指定清空<canvas>的颜色
+  gl.clearColor(0.5, 0.5, 0.5, 1.0)
+
+  // 清空<canvas>
+  gl.clear(gl.COLOR_BUFFER_BIT)
+}
+</script>
