@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>多列等高</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  ul, li {
+    list-style: none
+  }
+  .ul-1, .ul-2 {
+    margin: 0 10px;
+    display: flex;
+  }
+  .ul-2 {
+    flex-wrap: wrap;
+  }
+  .ul-1 li, .ul-2 li {
+    margin: 10px;
+    padding: 10px;
+    background: #007fff;
+    color: #fff;
+    border-radius: 5px;
+  }
+  .ul-1 li {
+    flex: 1;
+  }
+  .wrapper {
+    display: table;
+    border-spacing: 20px;
+  }
+  .wrapper > div {
+    display: table-cell;
+    width: 1000px;
+    padding: 10px;
+    background: #007fff;
+    color: #fff;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+  <h2>多列等高 · 方案一：flex 布局</h2>
+  <pre>
+  .ul-1 {
+    margin: 0 10px;
+    display: flex;
+  }
+  .ul-1 li {
+    margin: 10px;
+    padding: 10px;
+    flex: 1;
+    background: #007fff;
+    color: #fff;
+    border-radius: 5px;
+  }
+  </pre>
+  <ul class="ul-1">
+    <li>多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高</li>
+    <li>多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高</li>
+    <li>多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高</li>
+    <li>多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高</li>
+  </ul>
+  <h2>多列等高 · 方案二：table + table-cell 布局</h2>
+  <pre>
+  .wrapper {
+    display: table;
+    border-spacing: 20px;
+  }
+  .wrapper > div {
+    display: table-cell;
+    width: 1000px;
+    padding: 10px;
+    background: #007fff;
+    color: #fff;
+    border-radius: 5px;
+  }
+  </pre>
+  <div class="wrapper">
+    <div>多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高</div>
+    <div>多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高</div>
+    <div>多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高</div>
+    <div>多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高</div>
+  </div>
+  <h2>自动换行：flex 布局</h2>
+  <pre>
+  .ul-2 {
+    margin: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ul-2 li {
+    margin: 10px;
+    padding: 10px;
+    background: #007fff;
+    color: #fff;
+    border-radius: 5px;
+  }
+  </pre>
+  <ul class="ul-2">
+    <li>多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高</li>
+    <li>多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高</li>
+    <li>多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高</li>
+    <li>多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高多列等高</li>
+  </ul>
+</body>
+</html>
