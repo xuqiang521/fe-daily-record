@@ -1,0 +1,790 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>希尔排序 | 数据结构与算法（Python）</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../chapter6/section6.html" />
+    
+    
+    <link rel="prev" href="../chapter6/section4.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="6.5"
+        data-chapter-title="希尔排序"
+        data-filepath="chapter6/section5.md"
+        data-basepath=".."
+        data-revision="Fri Mar 31 2017 18:24:30 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        数据结构与算法（Python）
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="chapter1/index.html">
+            
+                
+                    <a href="../chapter1/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        引入概念
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="chapter1/section1.html">
+            
+                
+                    <a href="../chapter1/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        第一次尝试
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1/section2.html">
+            
+                
+                    <a href="../chapter1/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        算法的提出
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter1/section3.html">
+            
+                
+                    <a href="../chapter1/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        第二次尝试
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter1/section4.html">
+            
+                
+                    <a href="../chapter1/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        算法效率衡量
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter1/section5.html">
+            
+                
+                    <a href="../chapter1/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        算法分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter1/section6.html">
+            
+                
+                    <a href="../chapter1/section6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        常见时间复杂度
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="chapter1/section7.html">
+            
+                
+                    <a href="../chapter1/section7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Python内置类型性能分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter1/section8.html">
+            
+                
+                    <a href="../chapter1/section8.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        数据结构
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter2/index.html">
+            
+                
+                    <a href="../chapter2/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        顺序表
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chapter2/section1.html">
+            
+                
+                    <a href="../chapter2/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        顺序表的形式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter2/section2.html">
+            
+                
+                    <a href="../chapter2/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        顺序表的结构与实现
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="chapter2/section3.html">
+            
+                
+                    <a href="../chapter2/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        顺序表的操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="chapter2/section4.html">
+            
+                
+                    <a href="../chapter2/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Python中的顺序表
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter3/index.html">
+            
+                
+                    <a href="../chapter3/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        链表
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="chapter3/section1.html">
+            
+                
+                    <a href="../chapter3/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        单向链表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter3/section2.html">
+            
+                
+                    <a href="../chapter3/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        单项循环链表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="chapter3/section3.html">
+            
+                
+                    <a href="../chapter3/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        双向链表
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter4/index.html">
+            
+                
+                    <a href="../chapter4/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        栈
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="chapter4/section1.html">
+            
+                
+                    <a href="../chapter4/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        栈结构实现
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="chapter5/index.html">
+            
+                
+                    <a href="../chapter5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        队列
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="chapter5/section1.html">
+            
+                
+                    <a href="../chapter5/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        队列的实现
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="chapter5/section3.html">
+            
+                
+                    <a href="../chapter5/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        双端队列
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="chapter6/index.html">
+            
+                
+                    <a href="../chapter6/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        排序与搜索
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="chapter6/section1.html">
+            
+                
+                    <a href="../chapter6/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        冒泡排序
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="chapter6/section2.html">
+            
+                
+                    <a href="../chapter6/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        选择排序
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="chapter6/section3.html">
+            
+                
+                    <a href="../chapter6/section3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        插入排序
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="chapter6/section4.html">
+            
+                
+                    <a href="../chapter6/section4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        快速排序
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.5" data-path="chapter6/section5.html">
+            
+                
+                    <a href="../chapter6/section5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        希尔排序
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="chapter6/section6.html">
+            
+                
+                    <a href="../chapter6/section6.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        归并排序
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="chapter6/section7.html">
+            
+                
+                    <a href="../chapter6/section7.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                        常见排序算法效率比较
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="chapter6/section8.html">
+            
+                
+                    <a href="../chapter6/section8.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.8.</b>
+                        
+                        搜索
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="chapter7/index.html">
+            
+                
+                    <a href="../chapter7/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        树与树算法
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="chapter7/section1.html">
+            
+                
+                    <a href="../chapter7/section1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        二叉树
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="chapter7/section2.html">
+            
+                
+                    <a href="../chapter7/section2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        二叉树的遍历
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >数据结构与算法（Python）</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x5E0C;&#x5C14;&#x6392;&#x5E8F;">&#x5E0C;&#x5C14;&#x6392;&#x5E8F;</h1>
+<p>&#x5E0C;&#x5C14;&#x6392;&#x5E8F;(Shell Sort)&#x662F;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x7684;&#x4E00;&#x79CD;&#x3002;&#x4E5F;&#x79F0;&#x7F29;&#x5C0F;&#x589E;&#x91CF;&#x6392;&#x5E8F;&#xFF0C;&#x662F;&#x76F4;&#x63A5;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x7684;&#x4E00;&#x79CD;&#x66F4;&#x9AD8;&#x6548;&#x7684;&#x6539;&#x8FDB;&#x7248;&#x672C;&#x3002;&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x662F;&#x975E;&#x7A33;&#x5B9A;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x56E0;DL&#xFF0E;Shell&#x4E8E;1959&#x5E74;&#x63D0;&#x51FA;&#x800C;&#x5F97;&#x540D;&#x3002; &#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x662F;&#x628A;&#x8BB0;&#x5F55;&#x6309;&#x4E0B;&#x6807;&#x7684;&#x4E00;&#x5B9A;&#x589E;&#x91CF;&#x5206;&#x7EC4;&#xFF0C;&#x5BF9;&#x6BCF;&#x7EC4;&#x4F7F;&#x7528;&#x76F4;&#x63A5;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x6392;&#x5E8F;&#xFF1B;&#x968F;&#x7740;&#x589E;&#x91CF;&#x9010;&#x6E10;&#x51CF;&#x5C11;&#xFF0C;&#x6BCF;&#x7EC4;&#x5305;&#x542B;&#x7684;&#x5173;&#x952E;&#x8BCD;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#xFF0C;&#x5F53;&#x589E;&#x91CF;&#x51CF;&#x81F3;1&#x65F6;&#xFF0C;&#x6574;&#x4E2A;&#x6587;&#x4EF6;&#x6070;&#x88AB;&#x5206;&#x6210;&#x4E00;&#x7EC4;&#xFF0C;&#x7B97;&#x6CD5;&#x4FBF;&#x7EC8;&#x6B62;&#x3002;</p>
+<h2 id="&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x8FC7;&#x7A0B;">&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x8FC7;&#x7A0B;</h2>
+<p>&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x7684;&#x57FA;&#x672C;&#x601D;&#x60F3;&#x662F;&#xFF1A;&#x5C06;&#x6570;&#x7EC4;&#x5217;&#x5728;&#x4E00;&#x4E2A;&#x8868;&#x4E2D;&#x5E76;&#x5BF9;&#x5217;&#x5206;&#x522B;&#x8FDB;&#x884C;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#xFF0C;&#x91CD;&#x590D;&#x8FD9;&#x8FC7;&#x7A0B;&#xFF0C;&#x4E0D;&#x8FC7;&#x6BCF;&#x6B21;&#x7528;&#x66F4;&#x957F;&#x7684;&#x5217;&#xFF08;&#x6B65;&#x957F;&#x66F4;&#x957F;&#x4E86;&#xFF0C;&#x5217;&#x6570;&#x66F4;&#x5C11;&#x4E86;&#xFF09;&#x6765;&#x8FDB;&#x884C;&#x3002;&#x6700;&#x540E;&#x6574;&#x4E2A;&#x8868;&#x5C31;&#x53EA;&#x6709;&#x4E00;&#x5217;&#x4E86;&#x3002;&#x5C06;&#x6570;&#x7EC4;&#x8F6C;&#x6362;&#x81F3;&#x8868;&#x662F;&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x5730;&#x7406;&#x89E3;&#x8FD9;&#x7B97;&#x6CD5;&#xFF0C;&#x7B97;&#x6CD5;&#x672C;&#x8EAB;&#x8FD8;&#x662F;&#x4F7F;&#x7528;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5047;&#x8BBE;&#x6709;&#x8FD9;&#x6837;&#x4E00;&#x7EC4;&#x6570;[ 13 14 94 33 82 25 59 94 65 23 45 27 73 25 39 10 ]&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4EE5;&#x6B65;&#x957F;&#x4E3A;5&#x5F00;&#x59CB;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C06;&#x8FD9;&#x5217;&#x8868;&#x653E;&#x5728;&#x6709;5&#x5217;&#x7684;&#x8868;&#x4E2D;&#x6765;&#x66F4;&#x597D;&#x5730;&#x63CF;&#x8FF0;&#x7B97;&#x6CD5;&#xFF0C;&#x8FD9;&#x6837;&#x4ED6;&#x4EEC;&#x5C31;&#x5E94;&#x8BE5;&#x770B;&#x8D77;&#x6765;&#x662F;&#x8FD9;&#x6837;(&#x7AD6;&#x7740;&#x7684;&#x5143;&#x7D20;&#x662F;&#x6B65;&#x957F;&#x7EC4;&#x6210;)&#xFF1A;</p>
+<pre><code>13 14 94 33 82
+25 59 94 65 23
+45 27 73 25 39
+10
+</code></pre><p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5BF9;&#x6BCF;&#x5217;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF1A;</p>
+<pre><code>10 14 73 25 23
+13 27 94 33 39
+25 59 94 65 82
+45
+</code></pre><p>&#x5C06;&#x4E0A;&#x8FF0;&#x56DB;&#x884C;&#x6570;&#x5B57;&#xFF0C;&#x4F9D;&#x5E8F;&#x63A5;&#x5728;&#x4E00;&#x8D77;&#x65F6;&#x6211;&#x4EEC;&#x5F97;&#x5230;&#xFF1A;[ 10 14 73 25 23 13 27 94 33 39 25 59 94 65 82 45 ]&#x3002;&#x8FD9;&#x65F6;10&#x5DF2;&#x7ECF;&#x79FB;&#x81F3;&#x6B63;&#x786E;&#x4F4D;&#x7F6E;&#x4E86;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x4EE5;3&#x4E3A;&#x6B65;&#x957F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF1A;</p>
+<pre><code>10 14 73
+25 23 13
+27 94 33
+39 25 59
+94 65 82
+45
+</code></pre><p>&#x6392;&#x5E8F;&#x4E4B;&#x540E;&#x53D8;&#x4E3A;&#xFF1A;</p>
+<pre><code>10 14 13
+25 23 33
+27 25 59
+39 65 73
+45 94 82
+94
+</code></pre><p>&#x6700;&#x540E;&#x4EE5;1&#x6B65;&#x957F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF08;&#x6B64;&#x65F6;&#x5C31;&#x662F;&#x7B80;&#x5355;&#x7684;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x4E86;&#xFF09;</p>
+<h2 id="&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x7684;&#x5206;&#x6790;">&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x7684;&#x5206;&#x6790;</h2>
+<p><img src="../images/shellsort.png" alt="shellsort"></p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">shell_sort</span><span class="hljs-params">(alist)</span>:</span>
+    n = len(alist)
+    <span class="hljs-comment"># &#x521D;&#x59CB;&#x6B65;&#x957F;</span>
+    gap = n / <span class="hljs-number">2</span>
+    <span class="hljs-keyword">while</span> gap &gt; <span class="hljs-number">0</span>:
+        <span class="hljs-comment"># &#x6309;&#x6B65;&#x957F;&#x8FDB;&#x884C;&#x63D2;&#x5165;&#x6392;&#x5E8F;</span>
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(gap, n):
+            j = i
+            <span class="hljs-comment"># &#x63D2;&#x5165;&#x6392;&#x5E8F;</span>
+            <span class="hljs-keyword">while</span> j&gt;=gap <span class="hljs-keyword">and</span> alist[j-gap] &gt; alist[j]:
+                alist[j-gap], alist[j] = alist[j], alist[j-gap]
+                j -= gap
+        <span class="hljs-comment"># &#x5F97;&#x5230;&#x65B0;&#x7684;&#x6B65;&#x957F;</span>
+        gap = gap / <span class="hljs-number">2</span>
+
+alist = [<span class="hljs-number">54</span>,<span class="hljs-number">26</span>,<span class="hljs-number">93</span>,<span class="hljs-number">17</span>,<span class="hljs-number">77</span>,<span class="hljs-number">31</span>,<span class="hljs-number">44</span>,<span class="hljs-number">55</span>,<span class="hljs-number">20</span>]
+shell_sort(alist)
+print(alist)
+</code></pre>
+<h2 id="&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;">&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</h2>
+<ul>
+<li>&#x6700;&#x4F18;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;&#x6839;&#x636E;&#x6B65;&#x957F;&#x5E8F;&#x5217;&#x7684;&#x4E0D;&#x540C;&#x800C;&#x4E0D;&#x540C;</li>
+<li>&#x6700;&#x574F;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;O(n<sup>2</sup>)</li>
+<li>&#x7A33;&#x5B9A;&#x60F3;&#xFF1A;&#x4E0D;&#x7A33;&#x5B9A;</li>
+</ul>
+<h2 id="&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x6F14;&#x793A;">&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x6F14;&#x793A;</h2>
+<p><img src="../images/shellsort.gif" alt="shellsort"></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../chapter6/section4.html" class="navigation navigation-prev " aria-label="Previous page: 快速排序"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../chapter6/section6.html" class="navigation navigation-next " aria-label="Next page: 归并排序"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
