@@ -4,6 +4,9 @@
 
 ## 目录
 
+- [algorithm](https://github.com/xuqiang521/fe-daily-record/tree/master/algorithm)
+- [canvas](https://github.com/xuqiang521/fe-daily-record/tree/master/canvas)
+- [css](https://github.com/xuqiang521/fe-daily-record/tree/master/css)
 - [ebook](https://github.com/xuqiang521/fe-daily-record/tree/master/ebook)
 - [html](https://github.com/xuqiang521/fe-daily-record/tree/master/html)
 - [http](https://github.com/xuqiang521/fe-daily-record/tree/master/http)
@@ -11,3 +14,4 @@
 - [javascript](https://github.com/xuqiang521/fe-daily-record/tree/master/javascript)
 - [nodejs](https://github.com/xuqiang521/fe-daily-record/tree/master/nodejs)
 - [sql](https://github.com/xuqiang521/fe-daily-record/tree/master/sql)
+- [webgl](https://github.com/xuqiang521/fe-daily-record/tree/master/webgl)
