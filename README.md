@@ -32,7 +32,7 @@
 
 ### 开课吧
 
-1. WEB全栈公开课：https://pan.baidu.com/s/1UdtfzNK3ZN7cDobROHd7Uw，提取码：oil4
+1. WEB全栈公开课：https://pan.baidu.com/s/1UdtfzNK3ZN7cDobROHd7Uw 提取码：oil4
 
 ### 珠峰公开课
 
