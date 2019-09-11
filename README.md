@@ -4,11 +4,11 @@
 
 对于日报有问题的、想投稿的、要加群的可以联系我微信
 
-![](assets/Wechat1.png)
+<p><img src="assets/Wechat1.png" alt="" style="width: 300px"></p>
 
 还没有关注我公众号的小伙伴，码在下方（疯狂暗示）
 
-![](assets/Wechat3.png)
+<p><img src="assets/Wechat3.png" alt="" style="width: 600px"></p>
 
 ## 2019.9 好文推送
 
