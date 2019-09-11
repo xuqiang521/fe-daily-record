@@ -1,8 +1,20 @@
 ## 前端日常记录
 
-**本项目将会记录在前端路上日常点点滴滴的记录**
+目前在个人的群里，每日会推送一些好文到我的微信群，为了方便小伙伴后续再做查看，我会将推送过的好文同步记录在本项目的 issue 中。
 
-## 目录
+对于日报有问题的、想投稿的、要加群的可以联系我微信
+
+![](assets/Wechat1.jpeg)
+
+还没有关注我公众号的小伙伴，码在下方（疯狂暗示）
+
+![](assets/Wechat3.png)
+
+## 2019.9 好文推送
+
+- [2019.9.11](https://github.com/xuqiang521/fe-daily-record/issues/1)
+
+## 电子书目录
 
 - [algorithm](https://github.com/xuqiang521/fe-daily-record/tree/master/algorithm)
 - [canvas](https://github.com/xuqiang521/fe-daily-record/tree/master/canvas)
