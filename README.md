@@ -13,6 +13,7 @@
 ## 2019.9 好文推送
 
 - [2019.9.11](https://github.com/xuqiang521/fe-daily-record/issues/1)
+- [2019.9.12](https://github.com/xuqiang521/fe-daily-record/issues/2)
 
 ## 电子书目录
 
