@@ -19,6 +19,8 @@
 
 ## 电子书目录
 
+网盘自取链接:https://pan.baidu.com/s/1b86A3Zlukcu8zbPTyX3zpw  密码:nr3l
+
 - [algorithm](https://github.com/xuqiang521/fe-daily-record/tree/master/algorithm)
 - [canvas](https://github.com/xuqiang521/fe-daily-record/tree/master/canvas)
 - [css](https://github.com/xuqiang521/fe-daily-record/tree/master/css)
