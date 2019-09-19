@@ -17,6 +17,7 @@
 - [2019.9.16](https://github.com/xuqiang521/fe-daily-record/issues/3)
 - [2019.9.17](https://github.com/xuqiang521/fe-daily-record/issues/4)
 - [2019.9.18](https://github.com/xuqiang521/fe-daily-record/issues/5)
+- [2019.9.19](https://github.com/xuqiang521/fe-daily-record/issues/6)
 
 ## 电子书目录
 
