@@ -10,7 +10,7 @@
 
 ![](assets/Wechat3.png)
 
-## 2019.9 好文推送
+## 2019.9 月份好文推送
 
 - [2019.9.11](https://github.com/xuqiang521/fe-daily-record/issues/1)
 - [2019.9.12](https://github.com/xuqiang521/fe-daily-record/issues/2)
@@ -18,6 +18,7 @@
 - [2019.9.17](https://github.com/xuqiang521/fe-daily-record/issues/4)
 - [2019.9.18](https://github.com/xuqiang521/fe-daily-record/issues/5)
 - [2019.9.19](https://github.com/xuqiang521/fe-daily-record/issues/6)
+- [2019.9.20](https://github.com/xuqiang521/fe-daily-record/issues/7)
 
 ## 电子书目录
 
