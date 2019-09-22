@@ -10,14 +10,19 @@
 
 ![](assets/Wechat3.png)
 
-## 2019.9 好文推送
+## 2019.9 月份好文推送
 
 - [2019.9.11](https://github.com/xuqiang521/fe-daily-record/issues/1)
 - [2019.9.12](https://github.com/xuqiang521/fe-daily-record/issues/2)
 - [2019.9.16](https://github.com/xuqiang521/fe-daily-record/issues/3)
 - [2019.9.17](https://github.com/xuqiang521/fe-daily-record/issues/4)
+- [2019.9.18](https://github.com/xuqiang521/fe-daily-record/issues/5)
+- [2019.9.19](https://github.com/xuqiang521/fe-daily-record/issues/6)
+- [2019.9.20](https://github.com/xuqiang521/fe-daily-record/issues/7)
 
 ## 电子书目录
+
+网盘自取链接：https://pan.baidu.com/s/1b86A3Zlukcu8zbPTyX3zpw  密码:nr3l
 
 - [algorithm](https://github.com/xuqiang521/fe-daily-record/tree/master/algorithm)
 - [canvas](https://github.com/xuqiang521/fe-daily-record/tree/master/canvas)
@@ -33,11 +38,21 @@
 
 ## 公开课视频资料
 
+### 个人直播录屏
+
+1. AST 与前端工程化实战：https://www.bilibili.com/video/av64917125
+
+2. 探秘 Vue3.0 - Composition API 尝鲜：https://www.bilibili.com/video/av67940653
+
 ### 开课吧
+
+在线观看：https://www.bilibili.com/video/av68565950
 
 1. WEB全栈公开课：https://pan.baidu.com/s/1UdtfzNK3ZN7cDobROHd7Uw 提取码：oil4
 
 ### 珠峰公开课
+
+在线观看：https://www.bilibili.com/video/av68550995
 
 1. 最通俗易懂的MVVM原理 - 链接：https://pan.baidu.com/s/1FidCaXdgO4JX-7dxOhPj3Q 提取码：ibbv
 
