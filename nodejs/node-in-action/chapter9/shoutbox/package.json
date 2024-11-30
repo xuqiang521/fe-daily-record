@@ -10,7 +10,7 @@
     "ejs": "~2.5.7"
   },
   "devDependencies": {
-    "bcrypt": "^1.0.3",
+    "bcrypt": "^5.0.0",
     "redis": "^2.8.0"
   }
 }
